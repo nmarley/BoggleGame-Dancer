@@ -27,9 +27,16 @@ ajax '/addword/:word' => sub {
         $words = session('words');
     }
 
-    my $new_word = param 'word'; 
-    unless ( $new_word ~~ @$words ) {
-        push @$words, $new_word;
+    my @new_words = split /\s+/, param 'word';
+
+    for my $new_word ( @new_words ) {
+        # trim input
+        $new_word =~ s/^\s+|\s+$//g;
+        next unless ($new_word);
+
+        unless ( $new_word ~~ @$words ) {
+            push @$words, $new_word;
+        }
     }
 
     session 'words' => $words;
