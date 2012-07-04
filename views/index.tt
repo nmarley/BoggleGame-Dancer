@@ -1,5 +1,7 @@
 
-    <div id="square" style="float: left">
+<div id="main">
+
+    <div id="square">
     <% count = 0 %>
     <% FOREACH char IN faces %>
         <span class="letter"><% char %></span>
@@ -10,16 +12,15 @@
     <% END %>
     </div>
 
-    <div id="words" style="display: block">
+    <div id="words">
 
     <div id="inputbox">
-    <input type="text" name="input" length="50" />
+    <input type="text" id="input" name="input" length="50" />
     </div>
 
-    <div id="wordlist">
-    </div>
+    <div id="wordlist"></div>
 
     </div>
 
-
+</div>
 

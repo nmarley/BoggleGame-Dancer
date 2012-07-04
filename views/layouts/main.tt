@@ -17,5 +17,46 @@
 <div id="footer">
 Powered by <a href="http://perldancer.org/">Dancer</a> <% dancer_version %>
 </div>
+
+<script type="text/javascript">
+$(function()
+{
+    var inputText = $('#input');
+    var code = null;
+    inputText.keypress(function(e) {
+        code = (e.keyCode ? e.keyCode : e.which);
+        if ( code == 13 ) {
+            var url = '/addword/' + inputText.val();
+
+            $.getJSON( url,
+                { data: url },
+                function(json) {
+                    var list = '<ul>';
+                    $.each( json, function() {
+                        list += '<li>' + this + '</li>';
+                    });
+                    list += '</ul>';
+                    $('#wordlist').html( list );
+                    inputText.val('');
+                });
+        }
+
+        // TODO: lookup what this does.
+        // I just copied this from some other code & commented it out
+        // b/c it didn't let me type words into my input box. I should really
+        // learn this stuff though.
+        //
+        //e.preventDefault();
+
+    });
+});
+
+window.onbeforeunload = function() {
+    var message = "Are you sure you want to close this game? Your words will disappear. Press OK to continue or Cancel to keep playing the current game.";
+    if (confirm(message)) return true;
+    else return false;
+}
+</script>
+
 </body>
 </html>
