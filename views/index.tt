@@ -1,0 +1,25 @@
+
+    <div id="square" style="float: left">
+    <% count = 0 %>
+    <% FOREACH char IN faces %>
+        <span class="letter"><% char %></span>
+        <% count = count + 1 %>
+        <% IF ( count % 4 == 0 ) %>
+        <br />
+        <% END %>
+    <% END %>
+    </div>
+
+    <div id="words" style="display: block">
+
+    <div id="inputbox">
+    <input type="text" name="input" length="50" />
+    </div>
+
+    <div id="wordlist">
+    </div>
+
+    </div>
+
+
+

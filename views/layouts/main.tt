@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=<% settings.charset %>" />
+<title>BoggleGame</title>
+<link rel="stylesheet" href="<% request.uri_base %>/css/style.css" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">/* <![CDATA[ */
+    !window.jQuery && document.write('<script type="text/javascript" src="<% request.uri_base %>/javascripts/jquery.js"><\/script>')
+/* ]]> */</script>
+
+</head>
+<body>
+<div id="top">&nbsp;</div>
+<% content %>
+<div id="footer">
+Powered by <a href="http://perldancer.org/">Dancer</a> <% dancer_version %>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+appname: "BoggleGame"
+layout: "main"
+charset: "UTF-8"
+
+template: "template_toolkit"
+engines:
+  template_toolkit:
+    encoding:  'utf8'
+
